@@ -21,7 +21,7 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "baseHref": "/portfolio/",
-            "deployUrl": "/",
+            "deployUrl": "/portfolio/",
             "polyfills": [
               "zone.js"
             ],
