@@ -3,7 +3,6 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { CardSliderComponent } from './card-slider/card-slider.component';
-import { MatIcon } from '@angular/material/icon';
 import { FooterComponent } from './footer/footer.component';
 import { Title } from '@angular/platform-browser';
 import { fromEvent } from 'rxjs';
@@ -44,7 +43,9 @@ export class AppComponent {
   skills = [
     { name: 'Angular', icon: 'Angular.png' },
     { name: 'AngularJS', icon: 'AngularJS.png' },
+    { name: 'React.js', icon: 'React.png' },
     { name: 'RxJs', icon: 'RxJs.png' },
+    { name: 'Zustand', icon: 'Zustand.png' },
     { name: 'Flask', icon: 'Flask.png' },
     { name: 'Cakephp', icon: 'Cakephp.png' },
     { name: 'Mysql', icon: 'Mysql.png' },
@@ -67,24 +68,25 @@ export class AppComponent {
     { name: 'Jira', icon: 'Jira.png' },
   ]
 
+  aboutMe: string = `Passionate (I mean it) Software Engineer with strong experience in Angular 16+ and React.js, focused on building fast, scalable web apps with clean architecture and responsive design. Skilled in state management using RxJS, Hooks, Context API, and Zustand. Enjoys working with modern tools, integrating third-party services, and adding smart AI features. Known for leading hackathons, delivering great user experiences, and actively mentoring and reviewing code.`;
+
   experiences: Experience[] = [
     {
       company: 'Classera',
       position: 'Software Engineer',
-      startDate: new Date('2023-02-22'),
+      startDate: new Date('2023-02-01'),
       descriptionPoints: [
-        `Specialized in Angular (version 16+) and AngularJS, utilizing RxJS for asynchronous data management and 
-        Angular Material for UI components. Integrated Form.io as an iframe and SDK, as well as Go1 and Alison 
-        for course material, and implemented drag-and-drop features with Dragula.`,
+        `Built and maintained complex frontend applications using Angular 16+, AngularJS and React.js, following modular, reusable architecture.`,
 
-        `Worked on backend development with CakePHP and MySQL for 2 months, alongside frontend 
-        responsibilities.`,
+        `Implemented state management patterns using RxJS in Angular, and Zustand, Hooks, and Context API in React.`,
 
-        `Created numerous reusable components in Angular, enhancing development efficiency and consistency.`,
+        `Developed responsive, accessible UI components using Angular Material, styled-components/SCSS, and shadcn/ui in React.`,
 
-        `Conducted thorough testing and debugging to ensure robust, high-quality web applications.`,
+        `Integrated dynamic forms and content delivery using Form.io SDK, Go1, and Alison across both Angular and React-based platforms.`,
 
-        `Supervised and mentored 5 new joiners on Angular and AngularJS projects for 4-5 months.`
+        `Conducted peer code reviews, contributed to architecture discussions, and mentored 5+ junior developers.`,
+
+        `Collaborated with backend teams to consume RESTful APIs built in CakePHP and MySQL, ensuring seamless frontend/backend alignment.`
       ]
     }
   ];
