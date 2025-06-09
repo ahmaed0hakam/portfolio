@@ -20,8 +20,6 @@
             "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "baseHref": "/portfolio/",
-            "deployUrl": "/portfolio/",
             "polyfills": [
               "zone.js"
             ],
@@ -29,14 +27,14 @@
             "inlineStyleLanguage": "sass",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/assets/images"
+              "src/assets"
             ],
             "styles": [
-              "src/custom-theme.scss",
               "src/styles.sass"
             ],
-            "scripts": []
+            "scripts": [],
+            "baseHref": "/portfolio/",
+            "deployUrl": "/portfolio/"
           },
           "configurations": {
             "production": {
