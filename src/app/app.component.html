@@ -120,13 +120,13 @@
         </div>
         <div>
           <h3>Education</h3>
-          <p>Computer Science | Jordan University of Science and Technology<br>Graduated in June 2023 with a GPA of <span class="primary-text bold">3.67 (Excellent)</span>.</p>
+          <p>Computer Science | Jordan University of Science and Technology<br>Graduated in June 2023 with a GPA of <span class="primary-text bold-weight">3.67 (Excellent)</span>.</p>
         </div>
         <div>
           <h3>Experience</h3>
           @for (experience of experiences; track $index) {
             <div class="margin-bottom-20px">
-              <h4>{{experience.position}} | {{experience.company}} ({{experience.duration}})</h4>
+              <h4> <span class="primary-text bold-weight">{{experience.position}} | {{experience.company}} </span> - <span class="normal-weight">{{experience.employmentType}} ({{experience.duration}})</span></h4>
              <ul>
               @for (point of experience.descriptionPoints; track $index) {
                 <li>{{point}}</li>

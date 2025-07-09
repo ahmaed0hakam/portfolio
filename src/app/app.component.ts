@@ -15,6 +15,7 @@ interface Experience {
   endDate?: Date;
   descriptionPoints: string[];
   duration?: string;
+  employmentType?: string;
 }
 
 interface Achievement {
@@ -80,13 +81,25 @@ export class AppComponent {
 
         `Implemented state management patterns using RxJS in Angular, and Zustand, Hooks, and Context API in React.`,
 
-        `Developed responsive, accessible UI components using Angular Material, styled-components/SCSS, and shadcn/ui in React.`,
+        `Developed responsive, accessible UI components using Angular Material, Material UI and styled-components/SCSS in React.`,
 
         `Integrated dynamic forms and content delivery using Form.io SDK, Go1, and Alison across both Angular and React-based platforms.`,
 
         `Conducted peer code reviews, contributed to architecture discussions, and mentored 5+ junior developers.`,
 
         `Collaborated with backend teams to consume RESTful APIs built in CakePHP and MySQL, ensuring seamless frontend/backend alignment.`
+      ]
+    },
+    {
+      company: 'COR Labs',
+      position: 'Software Engineer',
+      employmentType: 'Part-Time',
+      startDate: new Date('2025-05-01'),
+      endDate: new Date('2025-08-01'),
+      descriptionPoints: [
+        "Developed reusable UI components using ReactJS, TypeScript, Zustand, Tailwind CSS, and shadcn/ui as part of a scalable content creation platform.",
+        "Built backend features using Go (Golang) and PostgreSQL, ensuring efficient data storage and retrieval.",
+        "Implemented clean architecture principles to support maintainability and reusability across both frontend and backend modules."
       ]
     }
   ];
