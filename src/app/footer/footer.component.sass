@@ -4,10 +4,11 @@
     display: block
     width: 100%
 footer
-  color: #000
+  color: #ccc
   width: 100%
   position: relative
-  background-color: #fff
+  background-color: #050505
+  border-top: 1px solid rgba(255, 255, 255, 0.08)
   height: 100px
   display: flex
   flex-direction: column
@@ -20,7 +21,7 @@ footer
     height: 200px
 
   h5
-    color: #fff
+    color: $text-primary
 
 .social
   display: flex
@@ -31,8 +32,8 @@ footer
 .show-more
   width: 40px
   height: 40px
-  background-color: #000
-  border: 1px solid white
+  background-color: $text-secondary
+  border: 1px solid $text-primary
   display: flex
   justify-content: center
   align-items: center
@@ -45,7 +46,7 @@ footer
   width: 20px
   height: 20px
   border-radius: 50%
-  background-color: #fff
+  background-color: $text-primary
   font-size: 30px
   display: flex
   align-items: center
@@ -83,5 +84,7 @@ footer
   align-items: center
   &:hover
     background-color: darken($primary, 10%)
+  img
+    filter: brightness(0) invert(1)
 .padding-sides
   padding: 0 30px

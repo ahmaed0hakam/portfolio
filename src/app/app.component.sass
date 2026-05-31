@@ -12,7 +12,7 @@
   from
     width: 0
   to
-    width: 20ch
+    width: 25ch
 
 @keyframes long-typing
   from
@@ -40,10 +40,15 @@ section
   width: 100%
   display: flex
   flex-direction: column
+  justify-content: center
   padding: 20px
   align-items: center
   background-repeat: no-repeat
   background-size: cover
+  background-position: center
+  background-attachment: fixed
+  background-color: rgba(0, 0, 0, 0.82)
+  background-blend-mode: multiply
   &.intro
     transition: opacity 0.5s ease-in-out
     width: 100%
@@ -82,11 +87,11 @@ section
         // gap: 25px
 
         .typing-container
-          width: 24ch
+          width: 25ch
           border-right: 4px solid #e9e9e9 // Cursor effect
           white-space: nowrap
           overflow: hidden
-          animation: short-typing 2s steps(20) 1s 1 normal both, blink-caret 0.75s step-end infinite
+          animation: short-typing 2s steps(25) 1s 1 normal both, blink-caret 0.75s step-end infinite
           position: relative
           z-index: 9999
 
@@ -147,7 +152,7 @@ section
 
         .basic-info
           .typing-container
-            animation: short-typing 2s steps(20) 1s 1 normal both, blink-caret 0.75s step-end infinite
+            animation: short-typing 2s steps(25) 1s 1 normal both, blink-caret 0.75s step-end infinite
   &.skills
     // background-image: url('/assets/images/sower-with-setting-sun-1888.jpg')
     background-repeat: no-repeat
@@ -157,7 +162,6 @@ section
     background-repeat: no-repeat
     background-size: cover
   &.about
-    background-color: #000
     color: #fff
 
     .row
@@ -187,10 +191,14 @@ section
 
 .grid
   display: grid
-  grid-template-columns: repeat(6, 1fr)
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr))
   gap: 23px
   padding: 20px 40px
   border-radius: 10px
+  width: 100%
+  max-width: 1000px
+  box-sizing: border-box
+  margin: 0 auto
   .card-container
     .skill-card
       min-width: 80px
@@ -282,14 +290,39 @@ section
   .drowning-note
     display: block
 
+@media (max-width: 992px)
+  .intro
+    flex-direction: column-reverse !important
+    padding-top: 100px !important
+    .my-image
+      min-height: 400px
+      align-self: center
+      width: 100%
+      max-width: 400px
+      border-radius: 20px
+      margin-bottom: 30px
+    .my-details
+      width: 100%
+      padding: 20px
+      gap: 30px
+
+@media (max-width: 768px)
+  .intro
+    .contact-info
+      grid-template-columns: 1fr !important
+      gap: 15px
+
+@media (max-width: 576px)
+  .intro
+    .my-image
+      min-height: 300px
+      max-width: 280px
+
 @media (max-width: 680px)
   .intro
     .my-image
-      display: none
-    .contact-info
-      display: flex
-      gap: 10px
-    // flex-direction: column !important
+      display: none !important
+
 
 @media (max-width: 414px)
   .supercali
@@ -297,14 +330,6 @@ section
   
   .row
     padding: 17px !important
-
-@media (max-width: 768px) 
-  .grid
-    grid-template-columns: repeat(4, 1fr)
-
-@media (max-width: 480px) 
-  .grid
-    grid-template-columns: repeat(2, 1fr)
 
 @media (max-height: 600px) 
   .section.intro

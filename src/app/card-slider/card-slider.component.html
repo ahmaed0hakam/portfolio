@@ -1,15 +1,23 @@
 <div class="slider">
-  <div class="slider-container">
+  <div class="slider-container" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
     @for (card of cards; track $index) {
-      <div class="card" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
-        <h3 class="card-title">{{ card.title }}</h3>
-        <img [src]="card.logo ? (logosPrefix + card.logo) : logosPrefix + 'default.svg.png'" [alt]="card.title">
-        <p class="card-desc" [innerHTML]="card.description"></p>
-        <div class="tags">
-          <span class="tag"><a [href]="card.link" target="_blank">Github Link <i class="material-icons">open_in_new</i></a></span>
-          <span class="tag" *ngIf="card.figma"><a [href]="card.figma" target="_blank">Design <i class="material-icons">open_in_new</i></a></span>
-          <span class="tag" *ngIf="card.slides"><a [href]="card.slides" target="_blank">Slides <i class="material-icons">open_in_new</i></a></span>
-          <span class="tag" *ngIf="card.demo"><a [href]="card.demo" target="_blank">Demo <i class="material-icons">open_in_new</i></a></span>
+      <div class="card">
+        <div class="card-content">
+          <h3 class="card-title">{{ card.title }}</h3>
+          <div class="card-body">
+            <div class="card-logo">
+              <img [src]="card.logo ? (logosPrefix + card.logo) : logosPrefix + 'default.svg.png'" [alt]="card.title">
+            </div>
+            <div class="card-info">
+              <p class="card-desc" [innerHTML]="card.description"></p>
+              <div class="tags">
+                <span class="tag"><a [href]="card.link" target="_blank">Github Link <mat-icon>open_in_new</mat-icon></a></span>
+                <span class="tag" *ngIf="card.figma"><a [href]="card.figma" target="_blank">Design <mat-icon>open_in_new</mat-icon></a></span>
+                <span class="tag" *ngIf="card.slides"><a [href]="card.slides" target="_blank">Slides <mat-icon>open_in_new</mat-icon></a></span>
+                <span class="tag" *ngIf="card.demo"><a [href]="card.demo" target="_blank">Demo <mat-icon>open_in_new</mat-icon></a></span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     }

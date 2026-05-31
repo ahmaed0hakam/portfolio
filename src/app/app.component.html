@@ -8,7 +8,7 @@
         <p style="font-size: 20px;">Hello there, It's Ahmad Alhafi</p>
         <h2 class="supercali">I'm a</h2>
         <div class="typing-container">
-          <h1 class="typing-text">Web Developer</h1>
+          <h1 class="typing-text">Frontend Engineer</h1>
         </div>
         <div class="relative">
           <p class="wise-p">When it comes to 
@@ -74,7 +74,7 @@
         <p style="font-size: 20px;">Hello there, It's Ahmad Alhafi</p>
         <h2 class="supercali">I'm a Supercalifragilisticexpialidocious</h2>
         <div class="typing-container">
-          <h1 class="typing-text">Web Developer</h1>
+          <h1 class="typing-text">Frontend Engineer</h1>
         </div>
         <div class="relative">
           <p class="wise-p">When it comes to 
@@ -104,7 +104,7 @@
     </div>
   </section>
 </div>
-  <section class="about" id="about">
+  <section class="about" id="about" style="background-image: url('assets/images/wheatfield-with-crows-1890.jpg')">
     <h2 class="title">About Me</h2>
     <div class="row">
       <div class="image">
@@ -113,37 +113,80 @@
       <div class="content">
         <div>
           <h3>I'm Ahmad</h3>
-          <span class="tag">Web developer</span>
+          <span class="tag">Frontend Engineer</span>
           <p>
             {{aboutMe}}
           </p>
         </div>
         <div>
           <h3>Education</h3>
-          <p>Computer Science | Jordan University of Science and Technology<br>Graduated in June 2023 with a GPA of <span class="primary-text bold-weight">3.67 (Excellent)</span>.</p>
+          <p>Bachelor's in Computer Science | Jordan University of Science and Technology<br>Graduated in June 2023. Completed core modules including Data Structures, Algorithms, Database Management, Software Engineering, and OOP with a focus on Full-Stack Web Development.</p>
         </div>
-        <div>
-          <h3>Experience</h3>
-          @for (experience of experiences; track $index) {
-            <div class="margin-bottom-20px">
-              <h4> <span class="primary-text bold-weight">{{experience.position}} | {{experience.company}} </span> - <span class="normal-weight">{{experience.employmentType}} ({{experience.duration}})</span></h4>
-             <ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience" id="experience" style="background-image: url('assets/images/still-life-vase-with-fifteen-sunflowers-1888.jpg')">
+    <h2 class="title">Professional Experience</h2>
+    <div class="timeline">
+      @for (experience of experiences; track $index) {
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="experience-header">
+              <h3>{{experience.position}}</h3>
+              <span class="company-tag">{{experience.company}}</span>
+            </div>
+            <span class="duration-text">{{experience.duration}}</span>
+            <ul class="experience-details">
               @for (point of experience.descriptionPoints; track $index) {
                 <li>{{point}}</li>
               }
-             </ul>
-            </div>
-          }
+            </ul>
+          </div>
         </div>
-
-      </div>
-
+      }
     </div>
-
   </section>
+
+  <section class="volunteer" id="volunteer" style="background-image: url('assets/images/sower-with-setting-sun-1888.jpg')">
+    <h2 class="title">Volunteer Experience</h2>
+    <div class="volunteer-grid">
+      @for (volunteer of volunteerExperiences; track $index) {
+        <div class="volunteer-card">
+          <div class="volunteer-header">
+            <h3>{{volunteer.position}}</h3>
+            <span class="organization-tag">{{volunteer.organization}}</span>
+          </div>
+          <div class="volunteer-sub">
+            <span class="location-text"><mat-icon class="sub-icon">place</mat-icon>{{volunteer.location}}</span>
+            <span class="duration-text"><mat-icon class="sub-icon">schedule</mat-icon>{{volunteer.duration}}</span>
+          </div>
+          <p class="volunteer-desc">{{volunteer.description}}</p>
+        </div>
+      }
+    </div>
+  </section>
+
   <section class="skills" id="skills" style="background-image: url('assets/images/sower-with-setting-sun-1888.jpg')">
     <h2 class="title">Skills & Abilities</h2>
-    <div class="grid bg-trans-gray">
+    
+    <div class="skills-categorized bg-trans-gray">
+      <div class="skill-category">
+        <h3><mat-icon class="category-icon">code</mat-icon>Frontend</h3>
+        <p>Angular (Signals, Zoneless, Rxjs), AngularJS, React.js (Zustand, Hooks), Ionic, Capacitor, PrimeNG, Material UI, Sass</p>
+      </div>
+      <div class="skill-category">
+        <h3><mat-icon class="category-icon">dns</mat-icon>Backend</h3>
+        <p>Firebase (FCM, Remote Config, Auth)</p>
+      </div>
+      <div class="skill-category">
+        <h3><mat-icon class="category-icon">groups</mat-icon>Soft Skills</h3>
+        <p>Peer mentoring, UI/UX problem-solving, collaborative team leadership</p>
+      </div>
+    </div>
+
+    <div class="grid bg-trans-gray margin-top-20px">
       @for (skill of skills; track $index) {
         <div class="card-container">
           <div class="skill-card">
@@ -152,19 +195,33 @@
           <h5 style="color: white;" class="text-center">{{skill.name}}</h5>
         </div>
       }
-
     </div>
-
   </section>
 
-  <section class="projects" id="projects">
+  <section class="projects" id="projects" style="background-image: url('assets/images/wheatfield-with-crows-1890.jpg')">
     <h2 class="title">Projects</h2>
     <card-slider></card-slider>
+  </section>
 
+  <section class="courses" id="courses" style="background-image: url('assets/images/almond_blossom.jpg')">
+    <h2 class="title">Courses & Certifications</h2>
+    <div class="courses-container">
+      @for (course of courses; track $index) {
+        <div class="course-card">
+          <div class="course-badge">
+            <mat-icon>workspace_premium</mat-icon>
+          </div>
+          <div class="course-info">
+            <h3>{{course.name}}</h3>
+            <span class="provider-tag">{{course.provider}}</span>
+          </div>
+        </div>
+      }
+    </div>
   </section>
 
   <section class="achievements" id="achievements" style="background-image: url('assets/images/almond_blossom.jpg')">
-    <h2 class="title black">Achievements</h2>
+    <h2 class="title">Achievements</h2>
     <div class="achievements-container">
       @for (achievement of achievements; track $index) {
         <div class="achievement-box">
@@ -172,17 +229,18 @@
             <img [src]="achievementsPrefix + achievement.icon" [alt]="achievement.name" width="100px">
           </div>
           <h3>{{achievement.name}}</h3>
-          <p>{{achievement.date}}</p>
+          <span class="achievement-issuer">{{achievement.issuer}}</span>
+          <p class="achievement-date">{{achievement.date}}</p>
+          @if (achievement.description) {
+            <p class="achievement-desc">{{achievement.description}}</p>
+          }
         </div>
       }
     </div>
-
   </section>
 
   <main-footer id="contact"></main-footer>
 
 </main>
-
-
 
 <router-outlet />
