@@ -6,6 +6,7 @@ import { CardSliderComponent } from './card-slider/card-slider.component';
 import { FooterComponent } from './footer/footer.component';
 import { Title } from '@angular/platform-browser';
 import { fromEvent } from 'rxjs';
+import { MatIcon } from '@angular/material/icon';
 
 
 interface Experience {
@@ -23,12 +24,28 @@ interface Achievement {
   issuer: string;
   date: Date  | string;
   icon: string;
+  description?: string;
+}
+
+interface Course {
+  name: string;
+  provider: string;
+}
+
+interface VolunteerExperience {
+  organization: string;
+  position: string;
+  location: string;
+  startDate: Date;
+  endDate?: Date;
+  description: string;
+  duration?: string;
 }
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, CommonModule, CardSliderComponent, FooterComponent],
+  imports: [RouterOutlet, NavbarComponent, CommonModule, CardSliderComponent, FooterComponent, MatIcon],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
   host: {
@@ -69,37 +86,52 @@ export class AppComponent {
     { name: 'Jira', icon: 'Jira.png' },
   ]
 
-  aboutMe: string = `Passionate (I mean it) Software Engineer with strong experience in Angular 16+ and React.js, focused on building fast, scalable web apps with clean architecture and responsive design. Skilled in state management using RxJS, Hooks, Context API, and Zustand. Enjoys working with modern tools, integrating third-party services, and adding smart AI features. Known for leading hackathons, delivering great user experiences, and actively mentoring and reviewing code.`;
+  aboutMe: string = `Passionate (I mean it) Frontend Engineer with +3 strong experience in Angular 16+ and React.js, focused on building fast, scalable web apps with clean architecture and responsive design. Skilled in state management using RxJS, Hooks, Context API, and Zustand. Enjoys working with modern tools, integrating third-party services, and adding smart AI features. Known for leading hackathons, delivering great user experiences, and actively mentoring and reviewing code.`;
 
   experiences: Experience[] = [
     {
-      company: 'Classera',
-      position: 'Software Engineer',
-      startDate: new Date('2023-02-01'),
+      company: 'MEDGULF Saudi Arabia (via Shamsieh)',
+      position: 'Senior Frontend Developer',
+      startDate: new Date('2026-03-01'),
       descriptionPoints: [
-        `Built and maintained complex frontend applications using Angular 16+, AngularJS and React.js, following modular, reusable architecture.`,
-
-        `Implemented state management patterns using RxJS in Angular, and Zustand, Hooks, and Context API in React.`,
-
-        `Developed responsive, accessible UI components using Angular Material, Material UI and styled-components/SCSS in React.`,
-
-        `Integrated dynamic forms and content delivery using Form.io SDK, Go1, and Alison across both Angular and React-based platforms.`,
-
-        `Conducted peer code reviews, contributed to architecture discussions, and mentored 5+ junior developers.`,
-
-        `Collaborated with backend teams to consume RESTful APIs built in CakePHP and MySQL, ensuring seamless frontend/backend alignment.`
+        `Build and architect core modules for MEDGULF's main health insurance web application using Angular 21 and PrimeNG, focusing on writing clean, scalable, and highly performant frontend code.`,
+        `Collaborate closely with product teams, engineers, and PMO to build major platform features, successfully turning complex insurance workflows into smooth digital experiences.`,
+        `Contribute deep frontend expertise to solution designs, working alongside the team and stakeholders to ensure the successful delivery of high-priority digital initiatives.`
       ]
     },
     {
-      company: 'COR Labs',
-      position: 'Software Engineer',
-      employmentType: 'Part-Time',
-      startDate: new Date('2025-05-01'),
-      endDate: new Date('2025-08-01'),
+      company: 'Tamrah Applications',
+      position: 'Full-Stack Developer / Consultant',
+      startDate: new Date('2025-12-01'),
+      endDate: new Date('2026-06-01'),
       descriptionPoints: [
-        "Developed reusable UI components using ReactJS, TypeScript, Zustand, Tailwind CSS, and shadcn/ui as part of a scalable content creation platform.",
-        "Built backend features using Go (Golang) and PostgreSQL, ensuring efficient data storage and retrieval.",
-        "Implemented clean architecture principles to support maintainability and reusability across both frontend and backend modules."
+        `Architected and built the entire frontend from scratch for the flagship application, Livin Journey, transitioning to a consultant role in March 2026.`,
+        `Created and open-sourced ngx-directo, a custom Angular library that serves as the 100% critical foundation for the web platform.`,
+        `Maximized performance by leveraging Angular 19+, PrimeNG, Signals, and zoneless change detection (removing Zone.js) for ultra-fast rendering.`,
+        `Integrated Firebase Services to power real-time features and push notifications via FCM.`
+      ]
+    },
+    {
+      company: 'CR2 Ltd',
+      position: 'Frontend Cross-Platform Developer',
+      startDate: new Date('2025-07-01'),
+      endDate: new Date('2025-12-01'),
+      descriptionPoints: [
+        `Built white-labeled Angular 14+ and Ionic projects, using modern features like Signals and standalone components.`,
+        `Migrated APIs from SOAP to RESTful and optimized shared components.`,
+        `Integrated Ionic and Capacitor to implement native device features.`
+      ]
+    },
+    {
+      company: 'Classera',
+      position: 'Frontend Developer',
+      startDate: new Date('2023-02-01'),
+      endDate: new Date('2025-07-01'),
+      descriptionPoints: [
+        `Frontend Development: Built and maintained complex applications using Angular 16+, AngularJS, and React.js with modular, reusable architectures.`,
+        `State Management: Implemented reactive data flows using RxJS (Angular) and managed global state in React via Zustand, Hooks, and Context API.`,
+        `UI/UX: Developed responsive, accessible interfaces utilizing Angular Material, Material UI, and styled-components/SCSS.`,
+        `Third-Party Integration: Integrated Form.io SDK for dynamic forms and managed educational content delivery via Go1 and Alison APIs.`
       ]
     }
   ];
@@ -107,18 +139,53 @@ export class AppComponent {
   achievementsPrefix: string = "assets/images/achievements/";
   achievements: Achievement[] = [
     {
-      name: '1st Place at Nasa Space Apps Challenge Ar-Ramtha',
+      name: '1st Place in NASA Space Apps Challenge',
       issuer: 'NASA - National Aeronautics and Space Administration',
       date: "Oct 2024",
-      icon: 'nasa.png'
+      icon: 'nasa.png',
+      description: 'Secured first place at the NASA Space Apps Challenge by addressing the "Seismic Detection Across the Solar System" challenge.'
     },
     {
-      name: '1st Place at the Gen-AI Hackathon',
+      name: 'ZINC AI Hackathon Finalist',
+      issuer: 'Zain Innovation Campus (ZINC)',
+      date: "Sep 2024",
+      icon: 'zinc.png',
+      description: 'Finalist in the ZINC AI Hackathon, placed in the top 4 out of +30 competing teams of +150 participants passing all filtration rounds with our idea, "masArl".'
+    },
+    {
+      name: '1st Place in Tahaluf Al Emirat\'s Generative AI Hackathon',
       issuer: 'Tahaluf Al Emarat Technical Solutions تحالف الإمارات للحلول التقنية',
       date: "Jan 2024",
-      icon: 'tahaluf.png'
+      icon: 'tahaluf.png',
+      description: 'Achieved the top position in Tahaluf Al Emarat\'s Generative AI Hackathon. Played a pivotal part in the creation of "Qissah".'
     }
-  ]
+  ];
+
+  courses: Course[] = [
+    { name: 'Advanced React', provider: 'Meta' },
+    { name: 'Foundations of Coding Back-End', provider: 'Microsoft' },
+    { name: 'Introduction to Programming With C#', provider: 'Microsoft' },
+    { name: 'Getting Started with Go', provider: 'University of California, Irvine' },
+    { name: 'Functions, Methods, and Interfaces in Go', provider: 'University of California, Irvine' }
+  ];
+
+  volunteerExperiences: VolunteerExperience[] = [
+    {
+      organization: 'Namaa Association for Community Development',
+      position: 'Volunteer',
+      location: 'Zarqa, Jordan',
+      startDate: new Date('2023-07-01'),
+      description: 'Supporting elders, orphans, and small businesses through community events and initiatives as part of the Tamkeen department'
+    },
+    {
+      organization: 'Nasmo Just',
+      position: 'Media Manager and Co-founder',
+      location: 'Irbid, Jordan',
+      startDate: new Date('2021-02-01'),
+      endDate: new Date('2023-07-01'),
+      description: 'Delivered innovative ideas and resources aimed at academic development.'
+    }
+  ];
 
   /**
    * Calculates the duration between two dates in years and months.
@@ -154,6 +221,10 @@ export class AppComponent {
     this.experiences = this.experiences.map(experience => ({
       ...experience,
       duration: this.calculateDuration(experience.startDate, experience.endDate)
+    }));
+    this.volunteerExperiences = this.volunteerExperiences.map(volunteer => ({
+      ...volunteer,
+      duration: this.calculateDuration(volunteer.startDate, volunteer.endDate)
     }));
   }
 

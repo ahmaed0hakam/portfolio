@@ -14,11 +14,11 @@ export class FooterComponent {
 
   iconsPrefix : string = "assets/images/icons/";
   socialSites : {name : string, link: string, icon: string}[] = [
+    {name: 'LinkedIn', link: 'https://www.linkedin.com/in/ahmaed-alhafi/', icon: 'linkedin'},
+    {name: 'GitHub', link: 'https://github.com/ahmaed0hakam', icon: 'github'},
     {name: 'Instagram', link: 'https://www.instagram.com/ahmaed.alhafi/', icon: 'instagram'},
     {name: 'Facebook', link: 'https://www.facebook.com/ahmaed.alhafi/', icon: 'facebook'},
-    {name: 'LinkedIn', link: 'https://www.linkedin.com/in/ahmaed-alhafi/', icon: 'linkedin'},
     {name: 'Twitter', link: 'https://twitter.com/ahmaed_hakam', icon: 'twitter'},
-    {name: 'G+', link: 'https://support.google.com/answer/2451065?hl=en', icon: 'g+'},
   ]
 
   toggleFooter() {
