@@ -49,8 +49,7 @@ interface VolunteerExperience {
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
   host: {
-    id: "mainApp",
-    'mousemove': "onMouseMove()"
+    id: "mainApp"
   }
 })
 export class AppComponent {
