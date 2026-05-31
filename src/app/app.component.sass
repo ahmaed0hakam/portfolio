@@ -159,9 +159,6 @@ section
     background-size: cover
 
   &.projects
-    // background-image: url('/assets/images/still-life-vase-with-fifteen-sunflowers-1888.jpg')
-    // background-image: url('/assets/images/sower-with-setting-sun-1888.jpg')
-    // background-image: url('/assets/images/wheatfield-with-crows-1890.jpg')
     background-repeat: no-repeat
     background-size: cover
   &.about
@@ -204,22 +201,24 @@ section
   margin: 0 auto
   .card-container
     .skill-card
-      min-width: 80px
-      min-height: 80px
+      width: 80px
+      height: 80px
+      aspect-ratio: 1 / 1
       display: flex
       flex-direction: column
       justify-content: center
       align-items: center
-      gap: 10px
       background-color: #fff
       border: 2px solid $primary
       padding: 10px
       text-align: center
       color: $text-secondary
-      border-radius: 50px
+      border-radius: 50%
       cursor: pointer
       img
         width: 50px
+        height: 50px
+        object-fit: contain
         filter: grayscale(100%)
       &:hover
         img
